@@ -1,0 +1,1 @@
+sap.ui.core.mvc.Controller.extend("com.csw.iotui5v2.view.App", {});

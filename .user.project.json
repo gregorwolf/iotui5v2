@@ -1,0 +1,16 @@
+{
+  "run": [
+    {
+      "filePath": "/iotui5v2/index.html",
+      "previewMode": 0,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "urlParameters": [],
+      "_metadata": {
+        "runnerId": "webapprunner",
+        "id": 6394971,
+        "displayName": "New Web Application  1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "generation": [
+    {
+      "templateId": "ui5template.fioriMasterDetail",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Fri, 06 Feb 2015 07:18:50 GMT"
+    }
+  ],
+  "mockpreview": {
+    "mockUri": "/destinations/XSOdataProxy/s0001142741trial/xsdemo/hello/odata/iotscenario.xsodata",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false
+  },
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "hcpdeploy": {
+    "account": "p598692trial",
+    "name": "iotui5v2"
+  }
+}
