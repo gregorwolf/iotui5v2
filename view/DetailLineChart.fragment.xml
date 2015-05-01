@@ -1,0 +1,35 @@
+<core:FragmentDefinition
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+    xmlns:viz="sap.viz"
+	xmlns="sap.m">
+    <viz:ui5.Line width="100%" legend="false">
+        <viz:dataset>
+            <viz:ui5.data.FlattenedDataset data="{
+                    path: 'sensor_measurements',
+                    parameters: {select: 'value,measuredAt'},
+                    sorter: {
+                        path: 'measuredAt',
+                        descending: false
+                    },
+                    filters: [{ 
+                        path: 'measuredAt', 
+                        operator: 'BT', 
+                        value1: '2015-04-30', 
+                        value2: '2015-05-01' 
+                    }]
+                }">
+                <viz:dimensions>  
+                    <viz:ui5.data.DimensionDefinition  
+                                  axis="1" name="measuredAt" value="{measuredAt}">  
+                    </viz:ui5.data.DimensionDefinition>  
+            </viz:dimensions>  
+                <viz:measures>  
+                    <viz:ui5.data.MeasureDefinition value='{value}'>  
+                    </viz:ui5.data.MeasureDefinition>  
+                </viz:measures>  
+            </viz:ui5.data.FlattenedDataset>  
+        </viz:dataset>  
+    </viz:ui5.Line> 
+</core:FragmentDefinition>

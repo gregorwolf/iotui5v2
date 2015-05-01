@@ -1,0 +1,55 @@
+<core:FragmentDefinition
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+    <l:Grid 
+        id="iconTabFilter2grid" 
+        width="auto" 
+        defaultSpan="L12 M12 S12">
+        <l:content>
+            <f:SimpleForm 
+                id="iconTabFilter2form" 
+                minWidth="1024" 
+                editable="false" 
+                layout="ResponsiveGridLayout" 
+                labelSpanL="3" 
+                labelSpanM="3" 
+                emptySpanL="4" 
+                emptySpanM="4" 
+                columnsL="1">
+                <f:content>
+                    <Label 
+                        id="label4" 
+                        text="value">
+                    </Label>
+                    <Text 
+                        id="text4"
+                        text="{path:'value', formatter:'com.csw.iotui5v2.util.Formatter.temperatureValue'}"
+                        maxLines="0">
+                    </Text>
+                    <Label 
+                        id="label5" 
+                        text="unit">
+                    </Label>
+                    <Text 
+                        id="text5"
+                        text="{unit}"
+                        maxLines="0">
+                    </Text>
+                    <Label 
+                        id="label6" 
+                        text="measuredAt">
+                    </Label>
+                    <Text 
+                        id="text6"
+                        text="{measuredAt}"
+                        maxLines="0">
+                    </Text>
+					<core:ExtensionPoint 
+					    name="extIconTabFilterForm2"/>
+                </f:content>
+            </f:SimpleForm>
+        </l:content>
+    </l:Grid>
+</core:FragmentDefinition>

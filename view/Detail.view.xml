@@ -70,79 +70,7 @@
                         id="iconTabFilter1" 
                         icon="sap-icon://hint">
                         <content>
-                            <l:Grid 
-                                id="iconTabFilter1grid" 
-                                width="auto" 
-                                defaultSpan="L12 M12 S12">
-                                <l:content>
-                                    <f:SimpleForm 
-                                        id="iconTabFilter1form" 
-                                        minWidth="1024" 
-                                        editable="false" 
-                                        layout="ResponsiveGridLayout" 
-                                        labelSpanL="3" 
-                                        labelSpanM="3" 
-                                        emptySpanL="4" 
-                                        emptySpanM="4" 
-                                        columnsL="1">
-                                        <f:content>
-                                            <Label 
-                                                id="label1" 
-                                                text="device">
-                                            </Label>
-                                            <Text 
-                                                id="text1"
-                                                text="{device}"
-                                                maxLines="0">
-                                                <customData 
-                                                    id="customData6">
-                                                    <core:CustomData 
-                                                        id="coreCustomData6" 
-                                                        key="sapDtResourcePath" 
-                                                        value="sensors">
-                                                    </core:CustomData>
-                                                </customData>
-                                            </Text>
-                                            <Label 
-                                                id="label2" 
-                                                text="type">
-                                            </Label>
-                                            <Text 
-                                                id="text2"
-                                                text="{type}"
-                                                maxLines="0">
-                                                <customData 
-                                                    id="customData7">
-                                                    <core:CustomData 
-                                                        id="coreCustomData7" 
-                                                        key="sapDtResourcePath" 
-                                                        value="sensors">
-                                                    </core:CustomData>
-                                                </customData>
-                                            </Text>
-                                            <Label 
-                                                id="label3" 
-                                                text="lastMeasurement">
-                                            </Label>
-                                            <Text 
-                                                id="text3"
-                                                text="{lastMeasurement}"
-                                                maxLines="0">
-                                                <customData 
-                                                    id="customData8">
-                                                    <core:CustomData 
-                                                        id="coreCustomData8" 
-                                                        key="sapDtResourcePath" 
-                                                        value="sensors">
-                                                    </core:CustomData>
-                                                </customData>
-                                            </Text>
-                                            <core:ExtensionPoint 
-                                                name="extIconTabFilterForm1"/>
-                                        </f:content>
-                                    </f:SimpleForm>
-                                </l:content>
-                            </l:Grid>
+							<core:Fragment fragmentName="com.csw.iotui5v2.view.DetailTab1" type="XML" />
                         </content>
                     </IconTabFilter>
                     <IconTabFilter 
@@ -150,89 +78,14 @@
                         key="last_measurement" 
                         icon="sap-icon://enter-more">
                         <content>
-                            <l:Grid 
-                                id="iconTabFilter2grid" 
-                                width="auto" 
-                                defaultSpan="L12 M12 S12">
-                                <l:content>
-                                    <f:SimpleForm 
-                                        id="iconTabFilter2form" 
-                                        minWidth="1024" 
-                                        editable="false" 
-                                        layout="ResponsiveGridLayout" 
-                                        labelSpanL="3" 
-                                        labelSpanM="3" 
-                                        emptySpanL="4" 
-                                        emptySpanM="4" 
-                                        columnsL="1">
-                                        <f:content>
-                                            <Label 
-                                                id="label4" 
-                                                text="value">
-                                            </Label>
-                                            <Text 
-                                                id="text4"
-                                                text="{path:'value', formatter:'com.csw.iotui5v2.util.Formatter.temperatureValue'}"
-                                                maxLines="0">
-                                            </Text>
-                                            <Label 
-                                                id="label5" 
-                                                text="unit">
-                                            </Label>
-                                            <Text 
-                                                id="text5"
-                                                text="{unit}"
-                                                maxLines="0">
-                                            </Text>
-                                            <Label 
-                                                id="label6" 
-                                                text="measuredAt">
-                                            </Label>
-                                            <Text 
-                                                id="text6"
-                                                text="{measuredAt}"
-                                                maxLines="0">
-                                            </Text>
-                    						<core:ExtensionPoint 
-                    						    name="extIconTabFilterForm2"/>
-                                        </f:content>
-                                    </f:SimpleForm>
-                                </l:content>
-                            </l:Grid>
+							<core:Fragment fragmentName="com.csw.iotui5v2.view.DetailTab2" type="XML" />
                         </content>
                     </IconTabFilter>
                     <IconTabFilter 
                         id="iconTabFilter4" 
                         icon="sap-icon://line-chart">
                         <content>
-                            <viz:ui5.Line width="100%" legend="false">
-                                <viz:dataset>
-                                    <viz:ui5.data.FlattenedDataset data="{
-                                            path: 'sensor_measurements',
-                                            parameters: {select: 'value,measuredAt'},
-                                            sorter: {
-                                                path: 'measuredAt',
-                                                descending: true
-                                            },
-                                            filters: [{ 
-                                                path: 'measuredAt', 
-                                                operator: 'BT', 
-                                                value1: '2015-04-21', 
-                                                value2: '2015-04-22' 
-                                            }]
-                                        }">
-                                        <viz:dimensions>  
-                                            <viz:ui5.data.DimensionDefinition  
-                                                          axis="1" name="measuredAt" value="{measuredAt}">  
-                                            </viz:ui5.data.DimensionDefinition>  
-                                    </viz:dimensions>  
-                                        <viz:measures>  
-                                            <viz:ui5.data.MeasureDefinition value='{value}'>  
-                                            </viz:ui5.data.MeasureDefinition>  
-                                        </viz:measures>  
-                                    </viz:ui5.data.FlattenedDataset>  
-                                </viz:dataset>  
-                            </viz:ui5.Line> 
+							<core:Fragment fragmentName="com.csw.iotui5v2.view.DetailLineChart" type="XML" />
                         </content>
                     </IconTabFilter>
                     <core:ExtensionPoint
