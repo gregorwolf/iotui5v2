@@ -16,8 +16,8 @@
                     filters: [{ 
                         path: 'measuredAt', 
                         operator: 'BT', 
-                        value1: '2015-04-30', 
-                        value2: '2015-05-01' 
+                        value1: '2015-05-06T05:00:00.000', 
+                        value2: '2015-05-07T22:00:00.000' 
                     }]
                 }">
                 <viz:dimensions>  

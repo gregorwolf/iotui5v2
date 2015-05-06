@@ -20,6 +20,15 @@
                 columnsL="1">
                 <f:content>
                     <Label 
+                        id="label0" 
+                        text="id">
+                    </Label>
+                    <Text 
+                        id="text0"
+                        text="{id}"
+                        maxLines="0">
+                    </Text>
+                    <Label 
                         id="label1" 
                         text="device">
                     </Label>
