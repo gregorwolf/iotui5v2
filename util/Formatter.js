@@ -14,8 +14,10 @@ com.csw.iotui5v2.util.Formatter = {
 	unitIcon : function (value) {
 	    if(value === "°C") {
 	        return "sap-icon://temperature";
-	    } else {
+	    } else if(value === "%RH") {
 	        return "sap-icon://umbrella";
+	    } else {
+	        return "sap-icon://measuring-point";
 	    }
 	}
 
