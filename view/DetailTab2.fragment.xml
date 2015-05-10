@@ -37,15 +37,6 @@
                         text="{unit}"
                         maxLines="0">
                     </Text>
-                    <Label 
-                        id="label6" 
-                        text="measuredAt">
-                    </Label>
-                    <Text 
-                        id="text6"
-                        text="{measuredAt}"
-                        maxLines="0">
-                    </Text>
 					<core:ExtensionPoint 
 					    name="extIconTabFilterForm2"/>
                 </f:content>

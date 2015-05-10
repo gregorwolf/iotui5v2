@@ -21,7 +21,7 @@
                 <f:content>
                     <Label 
                         id="label0" 
-                        text="id">
+                        text="{i18n>sensorId}">
                     </Label>
                     <Text 
                         id="text0"
@@ -30,7 +30,7 @@
                     </Text>
                     <Label 
                         id="label1" 
-                        text="device">
+                        text="{i18n>device}">
                     </Label>
                     <Text 
                         id="text1"
@@ -47,7 +47,7 @@
                     </Text>
                     <Label 
                         id="label2" 
-                        text="type">
+                        text="{i18n>type}">
                     </Label>
                     <Text 
                         id="text2"
@@ -64,10 +64,19 @@
                     </Text>
                     <Label 
                         id="label3" 
-                        text="lastMeasurement">
+                        text="{i18n>measuredAt}">
                     </Label>
                     <Text 
                         id="text3"
+                        text="{last_measurement/measuredAt}"
+                        maxLines="0">
+                    </Text>
+                    <Label 
+                        id="label4" 
+                        text="{i18n>lastMeasurement}">
+                    </Label>
+                    <Text 
+                        id="text4"
                         text="{lastMeasurement}"
                         maxLines="0">
                         <customData 

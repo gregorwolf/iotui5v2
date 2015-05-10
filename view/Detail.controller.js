@@ -16,6 +16,20 @@ sap.ui.core.mvc.Controller.extend("com.csw.iotui5v2.view.Detail", {
 		}
 
 		this.getRouter().attachRouteMatched(this.onRouteMatched, this);
+		
+        var dateFrom = new Date();
+        dateFrom.setHours(dateFrom.getHours() - 24 );
+
+        var dateTo = new Date();
+
+        var oModel = new sap.ui.model.json.JSONModel();
+        oModel.setData({
+          delimiterDRS1: "@",
+          dateValueDRS1: dateFrom,
+          secondDateValueDRS1: dateTo,
+          dateFormatDRS1: "yyyy-MM-dd"
+        });
+        this.getView().setModel(oModel, "drs1");
 	},
 
 	onMasterLoaded :  function (sChannel, sEvent) {
@@ -132,6 +146,21 @@ sap.ui.core.mvc.Controller.extend("com.csw.iotui5v2.view.Detail", {
 		return sap.ui.core.UIComponent.getRouterFor(this);
 	},
 	
+	handleChange: function (oEvent) {
+        var sFrom  = oEvent.getParameter("from");
+        var sTo    = oEvent.getParameter("to");
+        var bValid = oEvent.getParameter("valid");
+    
+        this._iEvent++;
+    
+        var oDRS = oEvent.oSource;
+        if (bValid) {
+          oDRS.setValueState(sap.ui.core.ValueState.None);
+        } else {
+          oDRS.setValueState(sap.ui.core.ValueState.Error);
+        }
+    },
+    
 	onExit : function(oEvent){
 	    var oEventBus = this.getEventBus();
     	oEventBus.unsubscribe("Master", "InitialLoadFinished", this.onMasterLoaded, this);

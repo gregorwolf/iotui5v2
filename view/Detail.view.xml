@@ -74,14 +74,6 @@
                         </content>
                     </IconTabFilter>
                     <IconTabFilter 
-                        id="iconTabFilter2" 
-                        key="last_measurement" 
-                        icon="sap-icon://enter-more">
-                        <content>
-							<core:Fragment fragmentName="com.csw.iotui5v2.view.DetailTab2" type="XML" />
-                        </content>
-                    </IconTabFilter>
-                    <IconTabFilter 
                         id="iconTabFilter4" 
                         icon="sap-icon://line-chart">
                         <content>
