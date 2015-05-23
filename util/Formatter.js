@@ -3,7 +3,11 @@ jQuery.sap.declare("com.csw.iotui5v2.util.Formatter");
 com.csw.iotui5v2.util.Formatter = {
 
     dateIso : function (value) {
-		var oDateFormat = sap.ui.core.format.DateFormat.getDateTimeInstance({pattern: "yyyy-MM-dd HH:mm"});
+		var oDateFormat = sap.ui.core.format.DateFormat.getDateTimeInstance(
+		        {
+		            pattern: "yyyy-MM-dd HH:mm"
+		        }
+		    );
 		return oDateFormat.format(value, false);
     },
 

@@ -1,0 +1,49 @@
+[{
+	"id": 100,
+	"description": "Living Room",
+	"lastMeasurement": 100,
+	"device": "2nd Floor",
+	"type": "Raspberry Pi"
+}, {
+	"id": 110,
+	"description": "Living Room",
+	"lastMeasurement": 110,
+	"device": "2nd Floor",
+	"type": "Raspberry Pi"
+}, {
+	"id": 200,
+	"device": "2nd Floor",
+	"type": "Raspberry Pi",
+	"lastMeasurement": 200,
+	"description": "Kitchen"
+}, {
+	"id": 300,
+	"device": "2nd Floor",
+	"type": "Raspberry Pi",
+	"lastMeasurement": 300,
+	"description": "Office"
+}, {
+	"id": 3000,
+	"type": "Heizung",
+	"device": "ETA PC25",
+	"lastMeasurement": 3000,
+	"description": "Outdoor temperature"
+}, {
+	"id": 3100,
+	"device": "ETA PC25",
+	"type": "Heating",
+	"description": "Supply temperature",
+	"lastMeasurement": 3100
+}, {
+	"id": 3200,
+	"device": "ETA PC25",
+	"type": "Heating",
+	"lastMeasurement": 3200,
+	"description": "Return temperature"
+}, {
+	"id": 3300,
+	"device": "ETA PC25",
+	"type": "Heating",
+	"lastMeasurement": 3300,
+	"description": "Pellets tank"
+}]

@@ -8,8 +8,10 @@
   ],
   "mockpreview": {
     "mockUri": "/destinations/XSOdataProxy/s0001142741trial/xsdemo/hello/odata/iotscenario.xsodata",
-    "loadJSONFiles": false,
-    "loadCustomRequests": false
+    "loadJSONFiles": true,
+    "loadCustomRequests": false,
+    "metadataFilePath": "model/metadata.xml",
+    "mockRequestsFilePath": ""
   },
   "translation": {
     "translationDomain": "",
