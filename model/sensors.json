@@ -24,6 +24,12 @@
 	"description": "Office"
 }, {
 	"id": 3000,
+	"device": "ETA PC25",
+	"type": "Heating",
+	"lastMeasurement": 3300,
+	"description": "Pellets tank"
+}, {
+	"id": 3050,
 	"type": "Heizung",
 	"device": "ETA PC25",
 	"lastMeasurement": 3000,
@@ -40,10 +46,4 @@
 	"type": "Heating",
 	"lastMeasurement": 3200,
 	"description": "Return temperature"
-}, {
-	"id": 3300,
-	"device": "ETA PC25",
-	"type": "Heating",
-	"lastMeasurement": 3300,
-	"description": "Pellets tank"
 }]
