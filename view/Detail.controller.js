@@ -17,16 +17,18 @@ sap.ui.core.mvc.Controller.extend("com.csw.iotui5v2.view.Detail", {
 
 		this.getRouter().attachRouteMatched(this.onRouteMatched, this);
 		
-        var dateFrom = new Date();
-        dateFrom.setHours(dateFrom.getHours() - 24 );
+        this.dateFrom = new Date();
+        this.dateFrom.setHours(0, 0, 0, 0);
+        this.dateFrom.setDate(this.dateFrom.getDate() - 1 );
 
-        var dateTo = new Date();
+        this.dateTo = new Date();
+        this.dateTo.setHours(0, 0, 0, 0);
 
         var oModel = new sap.ui.model.json.JSONModel();
         oModel.setData({
           delimiterDRS1: "@",
-          dateValueDRS1: dateFrom,
-          secondDateValueDRS1: dateTo,
+          dateValueDRS1: this.dateFrom,
+          secondDateValueDRS1: this.dateTo,
           dateFormatDRS1: "yyyy-MM-dd"
         });
         this.getView().setModel(oModel, "drs1");
@@ -35,6 +37,7 @@ sap.ui.core.mvc.Controller.extend("com.csw.iotui5v2.view.Detail", {
 	onMasterLoaded :  function (sChannel, sEvent) {
 		this.getView().setBusy(false);
 		this.oInitialLoadFinishedDeferred.resolve();
+        this.setFilter(this.dateFrom, this.dateTo);
 	},
 	
 	onMetadataFailed : function(){
@@ -146,26 +149,42 @@ sap.ui.core.mvc.Controller.extend("com.csw.iotui5v2.view.Detail", {
 		return sap.ui.core.UIComponent.getRouterFor(this);
 	},
 	
-	handleChange: function (oEvent) {
-        var sFrom  = oEvent.getParameter("from");
-        var sTo    = oEvent.getParameter("to");
-        var bValid = oEvent.getParameter("valid");
-    
-        this._iEvent++;
-        /*
+	setFilter: function (sFrom, sTo) {
         var oFilter = new sap.ui.model.Filter({
                         path: 'measuredAt', 
                         operator: 'BT', 
                         value1: sFrom, 
                         value2: sTo 
         });
-        
+    
         this.getView().byId('flData').getBinding('data').filter(
         	[oFilter], 
-        	'Applicaiton'
+        	'Application'
     	);
-    	*/
+	},
+
+	handleChange: function (oEvent) {
+        var sFrom  = oEvent.getParameter("from");
+        var sTo    = oEvent.getParameter("to");
+        var bValid = oEvent.getParameter("valid");
     
+        this._iEvent++;
+        
+        var data = this.getView().byId('flData').getBinding('data');
+        
+        var currentFrom = new Date(data.aApplicationFilters[0].oValue1);
+        var currentTo   = new Date(data.aApplicationFilters[0].oValue2);
+        
+        // as DateRangeSelection fires change event (alling handleChange)
+        // we check for changes and only if selection is different from 
+        // current filter we apply this new filter.
+        if( 
+        	 sFrom.getTime() !== currentFrom.getTime() 
+        	|| sTo.getTime() !== currentTo.getTime() 
+        	) {
+        	this.setFilter(sFrom, sTo);
+        }
+
         var oDRS = oEvent.oSource;
         if (bValid) {
           oDRS.setValueState(sap.ui.core.ValueState.None);
