@@ -152,6 +152,19 @@ sap.ui.core.mvc.Controller.extend("com.csw.iotui5v2.view.Detail", {
         var bValid = oEvent.getParameter("valid");
     
         this._iEvent++;
+        /*
+        var oFilter = new sap.ui.model.Filter({
+                        path: 'measuredAt', 
+                        operator: 'BT', 
+                        value1: sFrom, 
+                        value2: sTo 
+        });
+        
+        this.getView().byId('flData').getBinding('data').filter(
+        	[oFilter], 
+        	'Applicaiton'
+    	);
+    	*/
     
         var oDRS = oEvent.oSource;
         if (bValid) {

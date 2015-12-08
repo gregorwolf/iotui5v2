@@ -15,7 +15,7 @@
     />
     <viz:ui5.Line width="100%" legend="false">
         <viz:dataset>
-            <viz:ui5.data.FlattenedDataset data="{
+            <viz:ui5.data.FlattenedDataset id="flData" data="{
                     path: 'sensor_measurements',
                     parameters: {select: 'value,measuredAt'},
                     sorter: {
@@ -25,8 +25,8 @@
                     filters: [{ 
                         path: 'measuredAt', 
                         operator: 'BT', 
-                        value1: '2015-05-17T05:00:00.000', 
-                        value2: '2015-05-17T22:00:00.000' 
+                        value1: '2015-12-07T05:00:00.000', 
+                        value2: '2015-12-07T22:00:00.000' 
                     }]
                 }">
                 <!--
