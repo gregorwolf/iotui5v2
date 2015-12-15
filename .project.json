@@ -23,5 +23,10 @@
   "hcpdeploy": {
     "account": "p598692trial",
     "name": "iotui5v2"
+  },
+  "dataBinding": {
+    "/view/Master.view.xml": {
+      "entitySet": "sensors"
+    }
   }
 }

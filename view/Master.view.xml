@@ -33,7 +33,12 @@
                 growingScrollToLoad="true" 
 				items="{ 
                     path: '/sensors',
-                    parameters:{expand : 'last_measurement'}
+                    parameters:{expand : 'last_measurement'},
+                    filters: [{ 
+                        path: 'inactive', 
+                        operator: 'EQ', 
+                        value1: '0'
+                    }]
                 }">
                 <customData 
                     id="customData1">
@@ -74,16 +79,19 @@
         </content>
         <footer
             id="masterFooter">
-            <Toolbar 
+            <Bar 
                 id="masterToolbar">
-                <content>
+                <contentLeft>
                     <footerbar:SettingsButton 
                         id="settingsButton" 
                         icon="sap-icon://action-settings" 
                         tooltip="Help">
                     </footerbar:SettingsButton>
-                </content>
-            </Toolbar>
+                </contentLeft>
+				<contentRight>
+					<Button  icon="sap-icon://filter" visible="false" press="onFilterPressed" id="filterButton" />
+				</contentRight>			
+            </Bar>
         </footer>
     </Page>
 </mvc:View>

@@ -1,7 +1,9 @@
 jQuery.sap.require("com.csw.iotui5v2.util.Formatter");
 
 sap.ui.core.mvc.Controller.extend("com.csw.iotui5v2.view.Master", {
-
+	
+	// _oSubControllerForFGS: null,
+	
 	onInit : function() {
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
 
@@ -23,6 +25,11 @@ sap.ui.core.mvc.Controller.extend("com.csw.iotui5v2.view.Master", {
 
 		oEventBus.subscribe("Detail", "Changed", this.onDetailChanged, this);
 		oEventBus.subscribe("Detail", "NotFound", this.onNotFound, this);
+		/*
+		// Initializes the sub-controller for handling filter
+		this._oSubControllerForFGS = new com.csw.iotui5v2.view.fragment.SubControllerForFGS(this._oView,
+			this._oTableOperations, jQuery.proxy(this.applyTableOperations, this), this._oResourceBundle);
+		*/
 	},
 
 	onRouteMatched : function(oEvent) {
@@ -127,6 +134,10 @@ sap.ui.core.mvc.Controller.extend("com.csw.iotui5v2.view.Master", {
 			//On the empty hash select the first item
 			this.selectFirstItem();
 		});
+	},
+
+	onFilterPressed: function() {
+		this._oSubControllerForFGS.openDialog("SensorFilterDialog");
 	},
 
 	onSelect : function(oEvent) {
