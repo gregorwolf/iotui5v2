@@ -35,11 +35,11 @@
                 -->
                 <viz:dimensions>  
                     <viz:ui5.data.DimensionDefinition  
-                                  axis="1" name="measuredAt" value="{measuredAt}">  
+                                  axis="1" name="Measured at" value="{path:'measuredAt', formatter:'com.csw.iotui5v2.util.Formatter.dateIso'}">  
                     </viz:ui5.data.DimensionDefinition>  
             </viz:dimensions>  
                 <viz:measures>  
-                    <viz:ui5.data.MeasureDefinition value='{value}'>  
+                    <viz:ui5.data.MeasureDefinition name="Value" value='{value}'>  
                     </viz:ui5.data.MeasureDefinition>  
                 </viz:measures>  
             </viz:ui5.data.FlattenedDataset>  

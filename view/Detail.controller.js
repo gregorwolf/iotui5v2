@@ -19,10 +19,10 @@ sap.ui.core.mvc.Controller.extend("com.csw.iotui5v2.view.Detail", {
 		
         this.dateFrom = new Date();
         this.dateFrom.setHours(0, 0, 0, 0);
-        this.dateFrom.setDate(this.dateFrom.getDate() - 1 );
 
         this.dateTo = new Date();
         this.dateTo.setHours(0, 0, 0, 0);
+        this.dateTo.setDate(this.dateFrom.getDate() + 1 );
 
         var oModel = new sap.ui.model.json.JSONModel();
         oModel.setData({
